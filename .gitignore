@@ -1,1 +1,7 @@
 /data/complete-dataset_DESeq2-normalized-counts.csv
+/results/DESeq2/complete-dataset_DESeq2-normalized-counts.csv
+/results/DESeq2/dds.Rdata
+/results/DESeq2/LRT.csv
+/results/DESeq2/V0_over_M0_Wald-test.csv
+/results/DESeq2/V12_over_M12_Wald-test.csv
+/results/DESeq2/V24_over_M24_Wald-test.csv
