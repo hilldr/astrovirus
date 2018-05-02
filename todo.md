@@ -1,6 +1,6 @@
 # Task list
 ## Important biology
-- [ ] Principle component plot
+- [X] Principle component plot
 - [ ] Timecourse scatterplot (modified volcano)
 - [ ] Facet categories from REACTOME GSEA plot
 - [ ] GSEA REACTOME heatmap with NES at 0, 12, 24 hours p.i.

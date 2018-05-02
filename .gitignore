@@ -6,3 +6,5 @@
 /results/DESeq2/V12_over_M12_Wald-test.csv
 /results/DESeq2/V24_over_M24_Wald-test.csv
 /img/volcano-plot.png
+/src/.RData
+/src/.Rhistory
