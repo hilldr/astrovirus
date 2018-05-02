@@ -6,6 +6,7 @@
 library(clusterProfiler)
 library(org.Hs.eg.db)
 library(ReactomePA)
+library(magrittr)
 
 ## create functions for GO & REACTOME GSEA
 gsea.go <- function(input = input,
