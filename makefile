@@ -15,6 +15,7 @@ img/volcano-plot.png : results/DESeq2/V0_over_M0_Wald-test.csv \
 
 ## principle component plot
 img/pca.png : results/DESeq2/complete-dataset_DESeq2-normalized-counts.csv \
+	data/Run_2127/Run_2127_wobus.csv \
 	src/ggplot2-themes.R
 	R -e "setwd('./src/'); source('pca.R')"
 
