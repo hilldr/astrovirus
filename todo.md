@@ -8,4 +8,5 @@
 ## Coding and database maintenance
 - [ ] write make for kallisto alignment and DESeq2 count export
 - [ ] write script to check host machine for installed R dependencies and
-	  install any missing packages
+install any missing packages
+- [ ] Test function of 'test = "Wald"' in DESeq2::results()
