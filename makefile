@@ -13,6 +13,15 @@ img/volcano-plot.png : results/DESeq2/V0_over_M0_Wald-test.csv \
 	src/ggplot2-themes.R
 	R -e "setwd('./src/'); source('volcano-plot.R')"
 
+## timecourse scatterplot
+img/timecourse-scatterplot.png : results/DESeq2/V0_over_M0_Wald-test.csv \
+	results/DESeq2/V12_over_M12_Wald-test.csv \
+	results/DESeq2/V24_over_M24_Wald-test.csv \
+	src/timecourse-scatterplot.R \
+	src/ggplot2-themes.R
+	R -e "setwd('./src/'); source('timecourse-scatterplot.R')"
+
+
 ## principle component plot
 img/pca.png : results/DESeq2/complete-dataset_DESeq2-normalized-counts.csv \
 	data/Run_2127/Run_2127_wobus.csv \
@@ -30,5 +39,6 @@ results/GSEA/combined_GSEA_results.csv : results/DESeq2/V0_over_M0_Wald-test.csv
 ## rule to make all images
 ## add new images here for automatic generation
 img : img/volcano-plot.png \
-	img/pca.png
+	img/pca.png \
+	img/timecourse-scatterplot.png
 
