@@ -13,13 +13,10 @@ load(file = file.path(results.dir, "dds.Rdata"))
 ## setup multifactor design
 DESeq2::design(dds) <- ~ group
 
-## Likelihood ratio test (ANOVA-like)
-dds <- DESeq2::DESeq(dds, test = "LRT", reduced = ~1, parallel = TRUE)
-res <- DESeq2::results(dds)
-write.csv(res, file = file.path(results.dir, "LRT.csv"))
+## Run DESeq
+dds <- DESeq2::DESeq(dds)
 
-## need to specify Wald test when later making specific comparisons
-## TODO test without 'test = "Wald"'
+## Apply Wald test for specific comparisons
 res <- DESeq2::results(dds, test = "Wald",
                        contrast = c("group", "V0", "M0"))
 write.csv(res, file = file.path(results.dir, "V0_over_M0_Wald-test.csv"))
