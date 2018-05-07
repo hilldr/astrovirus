@@ -20,8 +20,7 @@
 ## Input is: res dataframe, p value cutoff, log2fold change cutoff
 GeneTable <- function(x, p = 0.05, fc = 1){
   library(dplyr)
-  x <- x[order(x$padj),] ## sort by lowest adj p value
-  ##x <- x[!is.na(x$symbol),] ## Remove transcripts with NA gene associated
+  library(magrittr)
   rowIDs <- c('Total genes with counts',
               paste('Adjusted p value <', p),
               paste('Adj. p <', p, '& log2 Fold Change >', fc))
@@ -35,10 +34,10 @@ GeneTable <- function(x, p = 0.05, fc = 1){
                   nrow(filter(x, padj < p & log2FoldChange < 0)), 
                   nrow(filter(x, padj < p & log2FoldChange < -fc)))
   ## Make table
-  subsetTable <- data_frame(Total, Increasing, Decreasing)
-  subsetTable <- as.data.frame(subsetTable)
+  subsetTable <- data_frame(Total, Increasing, Decreasing) %>% 
+    as.data.frame()
   rownames(subsetTable) <- rowIDs
-  subsetTable
+  return(subsetTable)
 }
 
 
@@ -48,7 +47,7 @@ library(gridExtra)
 
 ## 0h results
 res <- read.csv(file = file.path(results.dir, 'V0_over_M0_Wald-test.csv'))
-GeneSummary <- GeneTable(res, 0.05, 1)
+GeneSummary <- GeneTable(res, p = 0.05, fc =  1)
 ## Save png of table
 png(filename = file.path(results.dir, "V0_over_M0_Gene-Summary.png"),
     height = 1.5, width = 6, units = 'in', res = 500)
@@ -59,7 +58,7 @@ dev.off()
 
 ## 12h results
 res <- read.csv(file = file.path(results.dir, 'V12_over_M12_Wald-test.csv'))
-GeneSummary <- GeneTable(res, 0.05, 1)
+GeneSummary <- GeneTable(res, p = 0.05, fc = 1)
 ## Save png of table
 png(filename = file.path(results.dir, "V12_over_M12_Gene-Summary.png"),
     height = 1.5, width = 6, units = 'in', res = 500)
@@ -70,7 +69,7 @@ dev.off()
 
 ## 24h results
 res <- read.csv(file = file.path(results.dir, 'V24_over_M24_Wald-test.csv'))
-GeneSummary <- GeneTable(res, 0.05, 1)
+GeneSummary <- GeneTable(res, p = 0.05, fc = 1)
 ## Save png of table
 png(filename = file.path(results.dir, "V24_over_M24_Gene-Summary.png"),
     height = 1.5, width = 6, units = 'in', res = 500)
