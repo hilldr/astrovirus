@@ -13,6 +13,14 @@ img/volcano-plot.png : results/DESeq2/V0_over_M0_Wald-test.csv \
 	src/ggplot2-themes.R
 	R -e "setwd('./src/'); source('volcano-plot.R')"
 
+## Summary table
+results/DESeq2/V0_over_M0_Gene-Summary.png \
+results/DESeq2/V12_over_M12_Gene-Summary.png \
+results/DESeq2/V24_over_M24_Gene-Summary.png : results/DESeq2/V0_over_M0_Wald-test.csv \
+	results/DESeq2/V12_over_M12_Wald-test.csv \
+	results/DESeq2/V24_over_M24_Wald-test.csv
+	R -e "setwd('./src/'); source('summary-table.R')"
+
 ## timecourse scatterplot
 img/timecourse-scatterplot.png : results/DESeq2/V0_over_M0_Wald-test.csv \
 	results/DESeq2/V12_over_M12_Wald-test.csv \
@@ -39,5 +47,8 @@ results/GSEA/combined_GSEA_results.csv : results/DESeq2/V0_over_M0_Wald-test.csv
 ## add new images here for automatic generation
 img : img/volcano-plot.png \
 	img/pca.png \
-	img/timecourse-scatterplot.png
+	img/timecourse-scatterplot.png \
+	results/DESeq2/V0_over_M0_Gene-Summary.png \
+	results/DESeq2/V12_over_M12_Gene-Summary.png \
+	results/DESeq2/V24_over_M24_Gene-Summary.png
 
