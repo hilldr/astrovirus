@@ -17,6 +17,7 @@ DESeq2::design(dds) <- ~ group
 dds <- DESeq2::DESeq(dds)
 
 ## Apply Wald test for specific comparisons
+## 'test = "Wald"' is default; specified here for clarity
 res <- DESeq2::results(dds, test = "Wald",
                        contrast = c("group", "V0", "M0"))
 write.csv(res, file = file.path(results.dir, "V0_over_M0_Wald-test.csv"))
