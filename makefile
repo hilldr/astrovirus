@@ -43,6 +43,11 @@ results/GSEA/combined_GSEA_results.csv : results/DESeq2/V0_over_M0_Wald-test.csv
 	src/gsea.R
 	R -e "setwd('./src/'); source('gsea.R')"
 
+## GSEA heatmap plot
+img/gsea-reactome-heatmap.png : results/GSEA/combined_GSEA_results.csv \
+	src/gsea-reactome-heatmap.R
+	R -e "setwd('./src/'); source('gsea-reactome-heatmap.R')"
+
 ## rule to make all images
 ## add new images here for automatic generation
 img : img/volcano-plot.png \
@@ -50,5 +55,6 @@ img : img/volcano-plot.png \
 	img/timecourse-scatterplot.png \
 	results/DESeq2/V0_over_M0_Gene-Summary.png \
 	results/DESeq2/V12_over_M12_Gene-Summary.png \
-	results/DESeq2/V24_over_M24_Gene-Summary.png
+	results/DESeq2/V24_over_M24_Gene-Summary.png \
+	img/gsea-reactome-heatmap.png
 
