@@ -1,3 +1,8 @@
+## normalized counts
+## update this to also require kallisto output
+results/DESeq2/complete-dataset_DESeq2-normalized-counts.csv : src/DESeq-export-counts.R
+	R -e "setwd('./src/'); source('DESeq2-export-counts.R')"
+
 ## Wald test results
 results/DESeq2/V0_over_M0_Wald-test.csv \
 results/DESeq2/V12_over_M12_Wald-test.csv \
@@ -47,6 +52,20 @@ results/GSEA/combined_GSEA_results.csv : results/DESeq2/V0_over_M0_Wald-test.csv
 img/gsea-reactome-heatmap.png : results/GSEA/combined_GSEA_results.csv \
 	src/gsea-reactome-heatmap.R
 	R -e "setwd('./src/'); source('gsea-reactome-heatmap.R')"
+
+## titer correlation analysis
+## output correlation scores
+results/counts_metadata_titer-correlation.csv : data/Sample-titers-for-RNAseq.csv \
+	data/Run_2127/Run_2127_wobus.csv \
+	results/DESeq2/complete-dataset_DESeq2-normalized-counts.csv \
+	src/titer-correlation.R
+	R -e "setwd('./src/'); source('titer-correlation.R')"
+
+## GSEA of titer results
+results/GSEA/GSEA_titer-corr_GO.csv \
+results/GSEA/GSEA_titer-corr_REACTOME.csv : results/counts_metadata_titer-correlation.csv \
+	src/titer-GSEA.R
+	R -e "setwd('./src/'); source('titer-GSEA.R')"
 
 ## rule to make all images
 ## add new images here for automatic generation
