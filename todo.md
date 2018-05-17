@@ -5,6 +5,8 @@
 - [X] Facet categories from REACTOME GSEA plot
 - [X] GSEA REACTOME heatmap with NES at 0, 12, 24 hours p.i.
 - [ ] correlate viral load data with gene expression data
+	  - [ ] plot GSEA results
+	  - [X] dot plot of viral replication markers
 ## Coding and database maintenance
 - [ ] write make for kallisto alignment and DESeq2 count export
 - [ ] write script to check host machine for installed R dependencies and
