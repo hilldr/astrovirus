@@ -7,6 +7,7 @@
 - [ ] correlate viral load data with gene expression data
 	  - [ ] plot GSEA results
 	  - [X] dot plot of viral replication markers
+	  - [X] add to makefile 
 ## Coding and database maintenance
 - [ ] write make for kallisto alignment and DESeq2 count export
 - [ ] write script to check host machine for installed R dependencies and

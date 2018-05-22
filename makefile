@@ -61,6 +61,14 @@ results/counts_metadata_titer-correlation.csv : data/Sample-titers-for-RNAseq.cs
 	src/titer-correlation.R
 	R -e "setwd('./src/'); source('titer-correlation.R')"
 
+## single gene titer plots
+img/titer-gene-correlation-plot_NEGATIVE.png \
+img/titer-gene-correlation-plot_POSITIVE.png \
+img/titer-gene-correlation-plot_gene_list.png : src/titer-plot.R \
+	results/counts_metadata_titer-correlation.csv \
+	results/gene_list.csv
+	R -e "setwd('./src/'); source('titer-plot.R')"
+
 ## GSEA of titer results
 results/GSEA/GSEA_titer-corr_GO.csv \
 results/GSEA/GSEA_titer-corr_REACTOME.csv : results/counts_metadata_titer-correlation.csv \
