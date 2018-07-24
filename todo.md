@@ -33,3 +33,11 @@
   - GSEA by time ('img/gsea-reactome-heatmap.png')
   - GSEA by viral titer ('results/GSEA/GSEA_titer-corr_REACTOME.csv')
 
+## Discussion with co-authors 7-24-2018
+- [ ] Heatmap with gene list
+  - [ ] top 20 genes up and down that correlate with viral load, show all replicates
+- [ ] Over-enrichment analysis of top up and down genes, all time points (number is flexible)
+- [ ] Fix up REACTOME pathways plot to show upper level categories
+- [ ] Write up methods for bioinformatics 
+- [ ] change labels to genome copies
+- [ ] Explore IFN pathway network analysis, type I vs. type III

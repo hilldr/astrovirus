@@ -49,8 +49,6 @@ green.set <- brewer.pal(n = 8, name = "Greens")
 blue.set <- brewer.pal(n = 8, name = "Blues")
 paired.set <- brewer.pal(n = 10, name = "Paired")
 
-library(wesanderson)
-la.set <- wes_palette("Zissou", 5, type = "discrete")
 
 ## blank theme for importing images into ggplot2 -------------------------------
 img.theme <- theme(panel.grid.major = element_blank(),
