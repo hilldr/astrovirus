@@ -56,7 +56,7 @@ plot1 <- ggplot(data = data.pos[data.pos$virus == "VA1",],
                         short = unit(.75,"mm"),
                         mid = unit(1,"mm"),
                         long = unit(2,"mm")) +
-    xlab("PFU/well") + ylab("TPM") +
+    xlab("genome copies/well") + ylab("TPM") +
     scale_fill_brewer("HPI", palette = "Reds") +
     geom_text(
         size = 5,
@@ -102,7 +102,7 @@ plot2 <- ggplot(data = data.neg[data.neg$virus == "VA1",], aes(x = PFU_well, y =
                         short = unit(.75,"mm"),
                         mid = unit(1,"mm"),
                         long = unit(2,"mm")) +
-    xlab("PFU/well") + ylab("TPM") +
+    xlab("genome copies/well") + ylab("TPM") +
     scale_fill_brewer("HPI", palette = "Reds") +
     geom_text(
         size = 5,
@@ -148,7 +148,7 @@ plot3 <- ggplot(data = data.genes[data.genes$virus == "VA1",],
                         short = unit(.75,"mm"),
                         mid = unit(1,"mm"),
                         long = unit(2,"mm")) +
-    xlab("PFU/well") + ylab("TPM") +
+    xlab("genome copies/well") + ylab("TPM") +
     scale_fill_brewer("HPI", palette = "Reds") +
     geom_text(
         size = 5,
