@@ -17,7 +17,7 @@ top_up <- subset(data,data$pvalue < 0.05) %>%
 
 ## top 100 down-regulated genes
 top_down <- subset(data,data$pvalue < 0.05) %>%
-    .[order(-.$log2FoldChange),] %>%
+    .[order(.$log2FoldChange),] %>%
     .$symbol %>%
     .[1:100]
 

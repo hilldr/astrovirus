@@ -31,7 +31,7 @@
 ## Discussion with co-authors 7-24-2018
 - [X] Heatmap with gene list
   - [X] top 20 genes up and down that correlate with viral load
-- [ ] Over-enrichment analysis of top up and down genes, all time points (number is flexible)
+- [X] Over-enrichment analysis of top up and down genes, all time points (number is flexible)
 - [X] Fix up REACTOME pathways plot to show upper level categories
 - [ ] Write up methods for bioinformatics 
 - [X] change labels to genome copies/well
