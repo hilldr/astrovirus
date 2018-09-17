@@ -8,6 +8,9 @@
 - [X] correlate viral load data with gene expression data
    - [X] dot plot of viral replication markers
    - [X] add to makefile 
+- [ ] Align RNA-seq data to astrovirus genome
+  - [ ] count viral reads per sample
+  - [ ] viral gene expression levels
 
 ### Comments from NAMSED meeting 5-23-18
 - [X] Plot PC1,2,3 vs. time, viral titer to show association of PCs with other experimental variables
