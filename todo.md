@@ -8,7 +8,7 @@
 - [X] correlate viral load data with gene expression data
    - [X] dot plot of viral replication markers
    - [X] add to makefile 
-- [ ] Align RNA-seq data to astrovirus genome
+- [ ] Align RNA-seq data to astrovirus genome (https://www.ncbi.nlm.nih.gov/nuccore/NC_013060.1)
   - [ ] count viral reads per sample
   - [ ] viral gene expression levels
 
