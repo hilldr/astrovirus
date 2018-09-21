@@ -1,0 +1,64 @@
+* Task list
+   :PROPERTIES:
+   :CUSTOM_ID: task-list
+   :END:
+
+** Important biology
+   :PROPERTIES:
+   :CUSTOM_ID: important-biology
+   :END:
+
+- [X] Principle component plot
+- [X] Timecourse scatterplot (modified volcano)
+- [X] Facet categories from REACTOME GSEA plot
+- [X] GSEA REACTOME heatmap with NES at 0, 12, 24 hours p.i.
+- [X] correlate viral load data with gene expression data
+  - [X] dot plot of viral replication markers
+  - [X] add to makefile
+- [ ] Align RNA-seq data to astrovirus genome
+  (https://www.ncbi.nlm.nih.gov/nuccore/NC\_013060.1)
+  - [ ] count viral reads per sample
+  - [ ] viral gene expression levels
+
+*** Comments from NAMSED meeting 5-23-18
+    :PROPERTIES:
+    :CUSTOM_ID: comments-from-namsed-meeting-5-23-18
+    :END:
+
+- [ ] Plot PC1,2,3 vs. time, viral titer to show association of PCs
+  with other experimental variables
+  - [ ] extract eigenvalues to show major genes driving variance
+- [X] Annotate GO pathways with parent-child relationships
+- [ ] Broad overview figure
+  - schematic showing experimental design
+  - Timecourse scatterplot
+  - tables with number of DE genes
+  - Principle component analysis
+- [X] Broad activation of antiviral response figure
+  - GSEA REACTOME heatmap with NES at 0, 12, 24 hours p.i.
+  - correlate viral load data with gene expression data
+
+** Coding and database maintenance
+   :PROPERTIES:
+   :CUSTOM_ID: coding-and-database-maintenance
+   :END:
+
+-  [ ] write make for kallisto alignment and DESeq2 count export
+-  [ ] write script to check host machine for installed R dependencies
+   and install any missing packages
+-  [X] Test function of 'test = "Wald"' in DESeq2::results()
+-  [ ] Create archive of raw data prerequisites
+
+** Discussion with co-authors 7-24-2018
+   :PROPERTIES:
+   :CUSTOM_ID: discussion-with-co-authors-7-24-2018
+   :END:
+
+- [X] Heatmap with gene list
+  - [X] top 20 genes up and down that correlate with viral load
+- [X] Over-enrichment analysis of top up and down genes, all time
+  points (number is flexible)
+- [X] Fix up REACTOME pathways plot to show upper level categories
+- [ ] Write up methods for bioinformatics
+- [X] change labels to genome copies/well
+- [ ] Explore IFN pathway network analysis, type I vs. type III
