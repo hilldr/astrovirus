@@ -10,7 +10,7 @@ INDEX=../data/genomes/GCF_000885815.1_ViralProj39811_cds_from_genomic.fna.gz.idx
 ## email address for notifications
 EMAIL=d2.david.hill@gmail.com
 ## This is the directory where the kallisto results will be deposited
-RESULTDIR=../results/astrovirus_va1/DESeq2/
+RESULTDIR=../results/astrovirus_va1/kallisto/
 ## make the folder to deposit results
 mkdir -p $RESULTDIR
 
