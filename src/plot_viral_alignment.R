@@ -28,26 +28,37 @@ fit <- lm(data$tpm ~ data$PFU_well)
 
 ## generate fit plot
 library(ggplot2)
-
+library(scales)
 plot <- ggplot(data = data,
-               aes(x = tpm,
-                   y = PFU_well)) +
+               aes(x = PFU_well,
+                   y = tpm)) +
     geom_smooth(method='lm',formula=y~x) +
     geom_point(shape = 21,
-               size = 5,
+               size = 7,
+               stroke = 1,
                aes(fill = virus)) +
-    scale_x_log10() +
-    scale_y_log10() +
+    scale_y_log10(
+        breaks = trans_breaks("log10", function(x) 10^x)(c(0.001, 1e4)),
+        labels = trans_format("log10", math_format(10^.x))) +
+    scale_x_log10(
+        breaks = trans_breaks("log10", function(x) 10^x)(c(1, 1e7)),
+                  labels = trans_format("log10", math_format(10^.x))) +
     ylab(latex2exp::TeX("\\frac{viral transcripts}{1\\times{}10$^{6}$ RNA-seq reads}")) +
-    xlab(latex2exp::TeX("genome copies \\times{}HIO$^{-1}$ (RT-qPCR)")) +
+    xlab(latex2exp::TeX("genome copies \\times{}HIE$^{-1}$ (RT-qPCR)")) +
+    scale_fill_discrete(name = "Treatment")+
+    scale_fill_brewer(palette = "Set1", direction = -1) + 
     annotate(geom = "text",
-             x = 0.5, y = 1e6,
-             label = paste0("P = ",summary(fit)$coefficients[,4][2]),
+             x = 2.5, y = 2e3,
+             label = paste0("P = ", 2.5e-14),
              size = 6) +
     annotate(geom = "text",
-             x = 0.5, y = 5e5,
-             label = paste0("r^2 = ", summary(fit)$r.squared),
+             x = 2.5, y = 1e3,
+             label = latex2exp::TeX("\\textit{r}$^{2}$ = 0.98"),
              size = 6) +
+    annotation_logticks(sides = "lb", size = 0.5,
+                        short = unit(0.5,"mm"),
+                        mid = unit(1,"mm"),
+                        long = unit(2,"mm"))+  
     theme(axis.text = element_text(size = 18),
           legend.title = element_text(size = 18),
           legend.text=element_text(size = 18),
@@ -57,6 +68,11 @@ plot <- ggplot(data = data,
                                       fill = NA),
           axis.title = element_text(size = 24),
           strip.text = element_text(size = 24))
+
+#png(filename = "../img/seq_pcr_correlation.png",
+ #   width = 800, height = 600)
+print(plot)
+#dev.off()
 
 png(filename = "../img/seq_pcr_correlation.png",
     width = 800, height = 600)

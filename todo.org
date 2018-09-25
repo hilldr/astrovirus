@@ -18,7 +18,8 @@
 - [-] Align RNA-seq data to astrovirus genome
   (https://www.ncbi.nlm.nih.gov/nuccore/NC_013060.1)
   - [X] download and index viral genome
-  - [ ] count viral reads per sample
+  - [X] count viral reads per sample
+    - [X] PCR-TPM correlation plot
   - [ ] viral gene expression levels
 
 *** Comments from NAMSED meeting 5-23-18
