@@ -1,0 +1,6 @@
+InfoKey: Title
+InfoValue: HIO Astrovirus RNA-seq methods
+InfoKey: Author
+InfoValue: David R. Hill
+InfoKey: Subject
+InfoValue: Materials and Methods

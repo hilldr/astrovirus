@@ -1,0 +1,40 @@
+% Created 2018-11-07 Wed 15:55
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+  \input{header.tex}
+\usepackage{lineno}
+\setcounter{secnumdepth}{0}
+\author{David R. Hill}
+\date{\today}
+\title{}
+\begin{document}
+
+
+\section*{{\bfseries\sffamily } RNA-seq Analysis}
+\label{sec:org9b19f33}
+\subsection*{{\bfseries\sffamily } Sequencing}
+\label{sec:orga966f9f}
+RNA was isolated using the mirVana RNA isolation kit and following the Total RNA isolation protocol (Thermo-Fisher Scientific, Waltham MA). RNA library preparation and RNA-sequencing (single-end, 50 bp read length) were performed by the University of Michigan DNA Sequencing Core using the Illumina Hi-Seq 2500 platform. All sequences were deposited in the EMBL-EBI ArrayExpress database using Annotare 2.0 and are cataloged under the accession number E-MTAB-XXXX. 
+\subsection*{{\bfseries\sffamily } Alignment}
+\label{sec:org95a9782}
+Pseudoalignment of raw Illumina sequence reads was computed using kallisto v0.44.0 \cite{Bray:2016}. All sequences were aligned to \emph{Homo sapiens} Genome Reference Consortium human build 38 release 79 (GRCh38.rel79) and the astrovirus VA1 genome (GenBank: 4731478). Aligned reads against each genome were tabulated separately.
+\subsection*{{\bfseries\sffamily } Quantification and Differential Expression analysis}
+\label{sec:org5f77f08}
+Differential expression of pseudoaligned sequences was calculated using the R package \texttt{DEseq2} \cite{Love:2014}. The multiple testing-adjusted p-value was calculated using the \texttt{DESeq2} implementation of the Wald test \cite{Love:2014} to compare viral-infected HIOs to mock-infected HIOs by time point. 
+\subsection*{{\bfseries\sffamily } Gene Set Enrichment Analysis}
+\label{sec:org72ed52d}
+Gene pathway over-representation tests and Gene Set Enrichment Analysis \cite{Subramanian:2005} were implemented using the R packages \texttt{clusterProfiler} \cite{Yu:2012} and \texttt{ReactomePA} \cite{Yu:2016}. Conserved gene pathways were retrieved from the Gene Ontology Consortium (GO) database \cite{Gene_Ontology_Consortium:2015} and REACTOME database \cite{Fabregat:2018}.
+\subsection*{{\bfseries\sffamily } Statistical analysis}
+\label{sec:org898cade}
+All RNA-seq analysis was conducted in R \cite{CRAN:2017} using GNU Emacs v25.1 \cite{Stallman:1981:EEC:1159890.806466} on the 64-bit Debian Linux stable version 9 operating system. Plots were constructed using the R package \texttt{ggplot2} \cite{Wickham:2009}. Data analysis scripts and further documentation for the RNA-seq analysis are available \url{https://github.com/hilldr/astrovirus}
+
+\section*{{\bfseries\sffamily } References}
+\label{sec:org8261dc1}
+\let\oldbibliography\thebibliography
+\renewcommand{\thebibliography}[1]{\oldbibliography{#1}
+\setlength{\itemsep}{-1pt}} %Reducing spacing in the bibliography.
+\footnotesize{ % https://www.sharelatex.com/learn/Font_sizes,_families,_and_styles#Reference_guide
+\bibliography{bibliography.bib}
+\bibliographystyle{nihunsrt} % Use the custom nihunsrt bibliography style included with the template
+}\normalsize
+\end{document}

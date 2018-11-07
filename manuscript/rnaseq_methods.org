@@ -1,0 +1,114 @@
+# RNA-seq methods
+#+EXCLUDE_TAGS: noexport
+#+OPTIONS: tex:t
+#+OPTIONS: toc:nil
+#+OPTIONS: H:3 num:0
+#+STARTUP: overview
+#+STARTUP: hideblocks
+#+NAME: makefile
+#+begin_src makefile :tangle makefile :results silent :exports none :eval no
+# LaTeX Makefile
+FILE=rnaseq_methods
+all: $(FILE).pdf 
+
+docx: $(FILE).docx
+
+# clean up processing files
+.PHONY: clean
+clean:
+	\rm *.aux *.blg *.out *.bbl *.log *.spl *.log
+
+# PDF export
+$(FILE).pdf: $(FILE).tex \
+	header.tex \
+	nihunsrt.bst \
+	bibliography.bib
+	pdflatex $(FILE)
+	pdflatex $(FILE)
+	bibtex $(FILE)
+	pdflatex $(FILE)
+	pdflatex $(FILE)
+	pdftk $(FILE).pdf update_info report.txt output $(FILE)_copy.pdf
+	mv $(FILE)_copy.pdf $(FILE).pdf
+
+# DOCX export
+$(FILE).docx: $(FILE).tex
+	cp $(FILE).tex $(FILE)_docx_reformat.tex
+	sed -i 's/pdf/png/g' $(FILE)_docx_reformat.tex # use png versions of figures
+	sed -i 's/\\(\\kappa\\)/κ/g' $(FILE)_docx_reformat.tex
+	sed -i 's/\\(\\beta\\)/β/g' $(FILE)_docx_reformat.tex
+	sed -i 's/\\(\\alpha\\)/α/g' $(FILE)_docx_reformat.tex
+	sed -i 's/\\(\\mu\\)/μ/g' $(FILE)_docx_reformat.tex
+	sed -i 's/\\(\\gamma\\)/γ/g' $(FILE)_docx_reformat.tex
+	sed -i 's/{\"i}/ï/g' $(FILE)_docx_reformat.tex
+	sed -i 's/\\pm/±/g' $(FILE)_docx_reformat.tex
+	sed -i 's/\num{//g' $(FILE)_docx_reformat.tex
+	sed -i 's/\\(_{\\text{2}}\\)/₂/g' $(FILE)_docx_reformat.tex
+	sed -i 's/\\(^{\\text{2}}\\)/²/g' $(FILE)_docx_reformat.tex
+	pandoc --bibliography=bibliography.bib --filter pandoc-citeproc --csl=science.csl --latex-engine=pdflatex --write=docx $(FILE).tex -o $(FILE).docx
+
+#+end_src
+#+NAME: pdf_metadata
+#+begin_src sh :tangle report.txt :results silent :exports none :eval no
+InfoKey: Title
+InfoValue: HIO Astrovirus RNA-seq methods
+InfoKey: Author
+InfoValue: David R. Hill
+InfoKey: Subject
+InfoValue: Materials and Methods
+#+end_src
+#+NAME: latex-class-setup
+#+begin_src emacs-lisp :results silent :exports none :eval yes
+;; latex header for nih grant format
+(unless (find "nih-grant" org-latex-classes :key 'car
+          :test 'equal)
+	 (add-to-list 'org-latex-classes
+	  '("nih-grant" 
+  "\\documentclass[11pt,notitlepage]{article}
+  [NO-DEFAULT-PACKAGES]
+  [EXTRA]"
+  ("\\section{%s}" . "\\section*{%s}")
+  ("\\subsection{%s}" . "\\subsection*{%s}")
+  ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+  ("\\paragraph{%s}" . "\\paragraph*{%s}")
+  ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
+  )
+)
+#+end_src
+#+CALL: latex-class-setup()
+#+LATEX_CLASS: nih-grant
+#+LATEX_HEADER: \input{header.tex}
+#+LATEX_HEADER: \usepackage{lineno}
+#+LATEX_CLASS_OPTIONS: [11pt]
+
+* RNA-seq Analysis
+** Sequencing
+RNA was isolated using the mirVana RNA isolation kit and following the Total RNA isolation protocol (Thermo-Fisher Scientific, Waltham MA). RNA library preparation and RNA-sequencing (single-end, 50 bp read length) were performed by the University of Michigan DNA Sequencing Core using the Illumina Hi-Seq 2500 platform. All sequences were deposited in the EMBL-EBI ArrayExpress database using Annotare 2.0 and are cataloged under the accession number E-MTAB-XXXX. 
+** Alignment
+Pseudoalignment of raw Illumina sequence reads was computed using kallisto v0.44.0 \cite{Bray:2016}. All sequences were aligned to /Homo sapiens/ Genome Reference Consortium human build 38 release 79 (GRCh38.rel79) and the astrovirus VA1 genome (GenBank: 4731478). Aligned reads against each genome were tabulated separately.
+** Quantification and Differential Expression analysis
+Differential expression of pseudoaligned sequences was calculated using the R package ~DEseq2~ \cite{Love:2014}. The multiple testing-adjusted p-value was calculated using the ~DESeq2~ implementation of the Wald test \cite{Love:2014} to compare viral-infected HIOs to mock-infected HIOs by time point. 
+** Gene Set Enrichment Analysis
+Gene pathway over-representation tests and Gene Set Enrichment Analysis \cite{Subramanian:2005} were implemented using the R packages ~clusterProfiler~ \cite{Yu:2012} and ~ReactomePA~ \cite{Yu:2016}. Conserved gene pathways were retrieved from the Gene Ontology Consortium (GO) database \cite{Gene_Ontology_Consortium:2015} and REACTOME database \cite{Fabregat:2018}.
+** Statistical analysis
+All RNA-seq analysis was conducted in R \cite{CRAN:2017} using GNU Emacs v25.1 \cite{Stallman:1981:EEC:1159890.806466} on the 64-bit Debian Linux stable version 9 operating system. Plots were constructed using the R package ~ggplot2~ \cite{Wickham:2009}. Data analysis scripts and further documentation for the RNA-seq analysis are available https://github.com/hilldr/astrovirus
+
+* References
+#+LATEX:\let\oldbibliography\thebibliography
+#+LATEX:\renewcommand{\thebibliography}[1]{\oldbibliography{#1}
+#+LATEX:\setlength{\itemsep}{-1pt}} %Reducing spacing in the bibliography.
+#+LATEX:\footnotesize{ % https://www.sharelatex.com/learn/Font_sizes,_families,_and_styles#Reference_guide
+#+LATEX:\bibliography{bibliography.bib} 
+#+LATEX:\bibliographystyle{nihunsrt} % Use the custom nihunsrt bibliography style included with the template
+#+LATEX:}\normalsize
+* Local Variables :noexport:
+# Local Variables:
+# mode: org
+# word-wrap: t
+# truncate-lines: nil
+# reftex-default-bibliography: ("bibliography.bib")
+# reftex-cite-format: "\\cite{%l}"
+# org-latex-with-hyperref: nil
+# org-latex-title-command: nil
+# ispell-dictionary: "american"
+# End:
