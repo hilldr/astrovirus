@@ -64,3 +64,7 @@
 - [ ] Write up methods for bioinformatics
 - [X] change labels to genome copies/well
 - [ ] Explore IFN pathway network analysis, type I vs. type III
+** Addressing issues raised in 2-23-2019 draft 
+- [X] Calculate % viral transcripts out of total transcripts sequenced
+0.05 +/- 0.02 @ 24 hpi
+- [ ] Add total up- and down-regulated genes at each timepoint to figure(s)
