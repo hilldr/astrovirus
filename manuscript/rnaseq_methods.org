@@ -87,12 +87,20 @@ RNA was isolated using the mirVana RNA isolation kit and following the Total RNA
 ** Alignment
 Pseudoalignment of raw Illumina sequence reads was computed using kallisto v0.44.0 \cite{Bray:2016}. All sequences were aligned to /Homo sapiens/ Genome Reference Consortium human build 38 release 79 (GRCh38.rel79) and the astrovirus VA1 genome (GenBank: 4731478). Aligned reads against each genome were tabulated separately.
 ** Quantification and Differential Expression analysis
-Differential expression of pseudoaligned sequences was calculated using the R package ~DEseq2~ \cite{Love:2014}. The multiple testing-adjusted p-value was calculated using the ~DESeq2~ implementation of the Wald test \cite{Love:2014} to compare viral-infected HIOs to mock-infected HIOs by time point. 
+Differential expression of pseudoaligned sequences was calculated using the R package ~DEseq2~ \cite{Love:2014}. The multiple testing-adjusted p-value was calculated using the ~DESeq2~ implementation of the Wald test \cite{Love:2014} to compare viral-infected HIEs to mock-infected HIEs by time point. 
 ** Gene Set Enrichment Analysis
 Gene pathway over-representation tests and Gene Set Enrichment Analysis \cite{Subramanian:2005} were implemented using the R packages ~clusterProfiler~ \cite{Yu:2012} and ~ReactomePA~ \cite{Yu:2016}. Conserved gene pathways were retrieved from the Gene Ontology Consortium (GO) database \cite{Gene_Ontology_Consortium:2015} and REACTOME database \cite{Fabregat:2018}.
 ** Statistical analysis
 All RNA-seq analysis was conducted in R \cite{CRAN:2017} using GNU Emacs v25.1 \cite{Stallman:1981:EEC:1159890.806466} on the 64-bit Debian Linux stable version 9 operating system. Plots were constructed using the R package ~ggplot2~ \cite{Wickham:2009}. Data analysis scripts and further documentation for the RNA-seq analysis are available https://github.com/hilldr/astrovirus
 
+
+* Figure Legends
+- *Figure 4B.* Log_{2} fold change in normalized expression (transcripts per million reads) of all expressed host genes in astrovirus-infected HIEs relative to mock-infected HIEs at each timepoint (0, 12, and 24 hours post micro-injection). The -log_{10} transformed P-value is given on the y-axis. Genes that are significantly up-regulated (P < 0.05) in astrovirus-infected HIEs relative to mock-infected HIEs are colored red and significantly. down-regulated genes are colored blue. 
+- *Figure 4C.* Heatmap demonstrating the mean scaled fold-change (Z-score) in expression of the top up- and down-regulated genes in virus-infected HIEs relative to mock-infected HIEs by timepoint post-microinjection.
+- *Supplemental Figure 4A.* Correlation between genome copies per HIE as determined by RT-qPCR and proportion of viral transcripts in the pool of sequenced RNA collected from the same HIE cultures.
+- *Supplemental Figures 4B-C.* Top genes positively- and negatively-correlated with viral load as determined by RNA-seq and RT-qPCR.
+- *Figure 5A.* The pool of genes that were significantly up- or down-regulated in astrovirus-infected HIEs relative to mock-infected HIEs were evaluated for enrichment of REACTOME pathways using an over-representation test. The top 10 significantly over-represented pathways among both the up- and down-regulated gene sets are shown.
+- *Figure 5B.* Differentially expressed genes were ranked according to the log_{2} fold change between virus-infected HIEs and mock-infected HIEs and analyzed for coordinated gene expressed within REACTOME pathways using Gene Set Enrichment Analysis. The heatmap shows conditions in which the normalized enrichment score (NES) differs significantly (P < 0.05) from random variation, indicating a trend towards coordinated  up- or down-regulated expression of genes within a pathway.
 * References
 #+LATEX:\let\oldbibliography\thebibliography
 #+LATEX:\renewcommand{\thebibliography}[1]{\oldbibliography{#1}
