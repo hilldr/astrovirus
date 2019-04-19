@@ -1,0 +1,133 @@
+,x,Category
+1,Signal regulatory protein (SIRP) family interactions,Signaling
+2,Cholesterol biosynthesis,Metabolism
+3,Peptide chain elongation,Translation
+4,Viral mRNA Translation,Translation
+5,Selenocysteine synthesis,Metabolism
+6,Nonsense Mediated Decay (NMD) independent of the Exon Junction Complex (EJC),Metabolism
+7,Eukaryotic Translation Elongation,Translation
+8,Eukaryotic Translation Termination,Translation
+9,"Respiratory electron transport, ATP synthesis by chemiosmotic coupling, and heat production by uncoupling proteins.",Metabolism
+10,Formation of a pool of free 40S subunits,Translation
+11,Eukaryotic Translation Initiation,Translation
+12,Cap-dependent Translation Initiation,Translation
+13,L13a-mediated translational silencing of Ceruloplasmin expression,Translation
+14,SRP-dependent cotranslational protein targeting to membrane,Metabolism
+15,Selenoamino acid metabolism,Metabolism
+16,GTP hydrolysis and joining of the 60S ribosomal subunit,Translation
+17,Influenza Viral RNA Transcription and Replication,Translation
+18,Influenza Life Cycle,Translation
+19,Translation,Translation
+20,Influenza Infection,Immune signaling
+21,Major pathway of rRNA processing in the nucleolus and cytosol,Translation
+22,CDO in myogenesis,Development
+23,Myogenesis,Development
+24,TRAF6 mediated IRF7 activation in TLR7/8 or 9 signaling,Immune signaling
+25,rRNA processing in the nucleus and cytosol,Translation
+26,rRNA processing,Translation
+27,PLC beta mediated events,Signaling
+28,"Activation of the mRNA upon binding of the cap-binding complex and eIFs, and subsequent binding to 43S",Translation
+29,Respiratory electron transport,Metabolism
+30,Nonsense-Mediated Decay (NMD),Metabolism
+31,Nonsense Mediated Decay (NMD) enhanced by the Exon Junction Complex (EJC),Metabolism
+32,Fertilization,Other
+33,Reproduction,Other
+34,Trafficking and processing of endosomal TLR,Immune signaling
+35,Infectious disease,Immune signaling
+36,Translation initiation complex formation,Translation
+37,Ribosomal scanning and start codon recognition,Translation
+38,Mitochondrial translation elongation,Translation
+39,Mitochondrial translation initiation,Translation
+40,"Transport of glucose and other sugars, bile salts and organic acids, metal ions and amine compounds",Metabolism
+41,GPVI-mediated activation cascade,Signaling
+42,"Formation of the ternary complex, and subsequently, the 43S complex",Translation
+43,Hedgehog ligand biogenesis,Development
+44,Mitochondrial translation termination,Translation
+45,Ca-dependent events,Ion channels
+46,Mitochondrial translation,Translation
+47,Regulation of TLR by endogenous ligand,Immune signaling
+48,Opioid Signalling,Signaling
+49,Cdc20:Phospho-APC/C mediated degradation of Cyclin A,Cell cycle
+50,Regulation of APC/C activators between G1/S and early anaphase,Cell cycle
+51,DAG and IP3 signaling,Signaling
+52,PLC-gamma1 signalling,Signaling
+53,EGFR interacts with phospholipase C-gamma,Signaling
+54,SLC-mediated transmembrane transport,Metabolism
+55,Type I hemidesmosome assembly,Cytoskeleton
+56,Calmodulin induced events,Signaling
+57,CaM pathway,Signaling
+58,The citric acid (TCA) cycle and respiratory electron transport,Metabolism
+59,Regulation of ornithine decarboxylase (ODC),Metabolism
+60,Complex I biogenesis,Cell cycle
+61,APC/C:Cdc20 mediated degradation of mitotic proteins,Metabolism
+62,IRF3-mediated induction of type I IFN,Immune signaling
+63,Na+/Cl- dependent neurotransmitter transporters,Ion channels
+64,APC/C-mediated degradation of cell cycle proteins,Cell cycle
+65,Regulation of mitotic cell cycle,Cell cycle
+66,Activation of APC/C and APC/C:Cdc20 mediated degradation of mitotic proteins,Cell cycle
+67,L1CAM interactions,Cytoskeleton
+68,APC/C:Cdc20 mediated degradation of Securin,Cell cycle
+69,STING mediated induction of host immune responses,Immune signaling
+70,G-protein mediated events,Signaling
+71,Formation of ATP by chemiosmotic coupling,Metabolism
+72,APC/C:Cdh1 mediated degradation of Cdc20 and other APC/C:Cdh1 targeted proteins in late mitosis/early G1,Metabolism
+73,G0 and Early G1,Cell cycle
+74,ECM proteoglycans,ECM
+75,APC:Cdc20 mediated degradation of cell cycle proteins prior to satisfation of the cell cycle checkpoint,Cell cycle
+76,Cytosolic sulfonation of small molecules,Metabolism
+77,Regulation of RAS by GAPs,Signaling
+78,Syndecan interactions,ECM
+79,Voltage gated Potassium channels,Ion channels
+80,Mitotic Spindle Checkpoint,Cell cycle
+81,Extracellular matrix organization,ECM
+82,TP53 Regulates Transcription of Genes Involved in Cytochrome C Release,Metabolism
+83,Collagen formation,ECM
+84,Neuronal System,Development
+85,Activation of BH3-only proteins,Apoptosis
+86,Collagen biosynthesis and modifying enzymes,ECM
+87,Ligand-gated ion channel transport,Ion channels
+88,Role of phospholipids in phagocytosis,Immune signaling
+89,Amyloid fiber formation,ECM
+90,Intrinsic Pathway for Apoptosis,Apoptosis
+91,Regulation of actin dynamics for phagocytic cup formation,Cytoskeleton
+92,Interferon Signaling,Immune signaling
+93,ISG15 antiviral mechanism,Immune signaling
+94,Antiviral mechanism by IFN-stimulated genes,Immune signaling
+95,Interferon alpha/beta signaling,Immune signaling
+96,Adherens junctions interactions,Cytoskeleton
+97,Integrin cell surface interactions,Cytoskeleton
+98,Negative regulators of RIG-I/MDA5 signaling,Immune signaling
+99,Activation of SMO,Signaling
+100,TFAP2 (AP-2) family regulates transcription of growth factors and their receptors,Signaling
+101,Regulation of IFNA signaling,Immune signaling
+102,Collagen degradation,ECM
+103,RIG-I/MDA5 mediated induction of IFN-alpha/beta pathways,Immune signaling
+104,Serotonin Neurotransmitter Release Cycle,Signaling
+105,"Lipid digestion, mobilization, and transport",Metabolism
+106,Cell-Cell communication,Development
+107,Interactions of neurexins and neuroligins at synapses,Signaling
+108,VLDL interactions,Signaling
+109,DSCAM interactions,ECM
+110,Hyaluronan metabolism,ECM
+111,Miscellaneous substrates,Metabolism
+112,Transcriptional regulation by the AP-2 (TFAP2) family of transcription factors,Signaling
+113,Post NMDA receptor activation events,Signaling
+114,Antigen activates B Cell Receptor (BCR) leading to generation of second messengers,Immune signaling
+115,CREB phosphorylation through the activation of CaMKII,Signaling
+116,Hyaluronan uptake and degradation,ECM
+117,Synthesis and interconversion of nucleotide di- and triphosphates,Metabolism
+118,Protein-protein interactions at synapses,Signaling
+119,Cell-cell junction organization,Cytoskeleton
+120,Ion homeostasis,Ion channels
+121,Recycling of bile acids and salts,Metabolism
+122,Collagen chain trimerization,ECM
+123,Metabolism of porphyrins,Metabolism
+124,HS-GAG biosynthesis,ECM
+125,Signaling by NODAL,Signaling
+126,Potassium Channels,Ion channels
+127,Non-integrin membrane-ECM interactions,ECM
+128,CREB phosphorylation through the activation of Ras,Signaling
+129,Ionotropic activity of Kainate Receptors,Ion channels
+130,Activation of Ca-permeable Kainate Receptor,Ion channels
+131,Condensation of Prometaphase Chromosomes,Cell cycle
+132,Assembly of collagen fibrils and other multimeric structures,ECM
